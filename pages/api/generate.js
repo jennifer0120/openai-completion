@@ -16,7 +16,6 @@ export default async function (req, res) {
   }
 
   const transcript = req.body.transcript || '';
-
   try {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
@@ -44,8 +43,8 @@ export default async function (req, res) {
 
 
 function generateInstagramCaption(text) {
-  const generatePrompt = "Transform the following text to an facebook caption"
+  const generatePrompt = "Transform the following text to an instagram caption"
 
   return `${generatePrompt} 
-  ${sampleText}`
+  ${text}`
 }
